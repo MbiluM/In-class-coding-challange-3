@@ -1,6 +1,6 @@
 // Task 5
 
-let ordr = [
+let order = [
     {id: 101, customer: "Alice", total: 300},
     {id: 102, customer: "Bod", total: 450},
     {id: 103, customer: "Charlie", total: 200},
@@ -15,22 +15,34 @@ console.log(```${some_order.customer}${some_order.id}$${some_order.total}```);
 
 // Task 6
 let inventory = {
-    iteams: [],
-    addIteam(name, quantity) {
-        this.iteams.push({name, quantity});
+    items: [],
+    addItem(name, quantity) {
+        //adds items to array
+        this.items.push({name, quantity});
     },
     removeLatestIteam() {
-        this.iteams.pop();
-    },
+        this.items.pop();
+    },//this method removes latest item
     removeFirstIteam() {
-        this.iteams.shift();
-    }
+        this.items.shift();
+    } //this method removes first item
 };
-inventory.addIteam("Monitor", 5);
-inventory.addIteam("keyboard", 0);
-inventory.addIteam("Mouse", 3);
-console.log(inventory.iteams);
-inventory.removeLatestIteam();
-console.log(inventory.iteams);
-inventory.removeFirstIteam();
-console.log(inventory.iteams);
+inventory.addItem("Monitor", 5); //adding item
+inventory.addItem("keyboard", 10); //adding item
+inventory.addItem("Mouse", 3); //adding item
+console.log(inventory.items); //viewing all items
+// inventory.removeLatestItem(); //removing latest
+// console.log(inventory.items); //viewing items remaining 
+// inventory.removeFirstItem(); //removing 1st item
+// console.log(inventory.items); //view items
+
+// task 7
+let employee = [
+    {name: "Alice", position: "Developer", salary: 70000},
+    {name: "Bod", position: "Designer", salary: 60000},
+    {name: "Charlie", position: "Manager", salary: 90000},
+]
+function findEmployee (employee, name) {
+    return employee.find(employee => employee.name === name); 
+};
+console.log(findEmployee, "Charlie")
